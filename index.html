@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaFerrari Inspired Page</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+      }
+      header {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: url('images/car1.jpg') no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .section {
+        padding: 50px 10%;
+        text-align: center;
+      }
+      .red-accent {
+        color: red;
+      }
+      .image-box {
+        width: 100%;
+        height: 600px;
+        margin: 30px 0;
+      }
+      .image-box.car2 {
+        background: url('images/car2.jpg') no-repeat center center/cover;
+      }
+      .image-box.car3 {
+        background: url('images/car3.jpg') no-repeat center center/cover;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>このサイトはWEBページ作成の練習のために作成されたものです。</p>
+    </header>
+    <div class="hero">
+      <h1 class="red-accent">LaFerrari Inspired Design</h1>
+    </div>
+    <div class="section fade-in">
+      <h2>エレガントなデザイン</h2>
+      <p>ラ・フェラーリのデザインは革新的かつ洗練されています。圧倒的な美しさとパフォーマンスを兼ね備えています。</p>
+      <div class="image-box car2"></div>
+    </div>
+    <div class="section fade-in">
+      <h2>驚異的なパフォーマンス</h2>
+      <p>ハイブリッド技術とV12エンジンが融合し、比類なき走行体験を提供します。</p>
+      <div class="image-box car3"></div>
+    </div>
+    <footer>
+      <p>
+        このサイトに掲載されているフェラーリの画像はAIで生成されたものであり、フェラーリとは無関係です。<br />
+        また、フェラーリのブランドを侵害する意図はありません。
+      </p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        sections.forEach((section) => observer.observe(section));
+      });
+    </script>
+  </body>
+</html>
