@@ -1,2 +1,5 @@
-# html_practice
-HTMLの練習用
+# HTMLの練習用
+
+このリポジトリはHTMLの練習用に作成しています。
+
+github pagesで閲覧できるようにしています。
